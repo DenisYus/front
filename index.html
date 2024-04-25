@@ -13,6 +13,7 @@
 
   <script type="module" src="./dev/components/userPage.js"></script>
   <script type="module" src="./dev/components/loginForm.js"></script>
+  <script type="module" src="./dev/components/navBar.js"></script>
 
 
   <style>
@@ -25,6 +26,25 @@
 </head>
 <body>
 <login-form></login-form>
-<user-page></user-page>
+<nav-bar style="display: none;"></nav-bar>
+<user-page style="display: none;"></user-page>
+
+
+<script>
+
+  const loginForm = document.querySelector('login-form');
+  const navBar = document.querySelector('nav-bar');
+  const userPage = document.querySelector('user-page');
+
+
+  document.addEventListener('login-success', () => {
+
+    loginForm.style.display = 'none';
+
+    navBar.style.display = 'flex';
+    userPage.style.display = 'block';
+
+  });
+</script>
 </body>
 </html>

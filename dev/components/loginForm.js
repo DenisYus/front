@@ -88,7 +88,7 @@ class LoginForm extends LitElement {
             if (profileResponse.ok) {
                 const profileData = await profileResponse.json();
                 const loginevent = new CustomEvent('login-success', { detail: profileData });
-                console.log(this.dispatchEvent(loginevent));
+                document.dispatchEvent(loginevent);
             }
             else {
                 console.error('Login failed');
